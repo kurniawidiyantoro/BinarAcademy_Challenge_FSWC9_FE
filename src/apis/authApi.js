@@ -13,7 +13,7 @@ const loginApi = (payload) => {
       redirect: 'follow'
     };
     
-    return fetch("http://localhost:3005/login", requestOptions)
+    return fetch(`${process.env.REACT_APP_BE_URL}/login`, requestOptions)
       .then(response => response)
       // .then(result => console.log(result))
       .catch(error => console.log('error', error));

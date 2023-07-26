@@ -29,7 +29,7 @@ const EditPasswordPage = () => {
         console.log('Not Authorize !');
         window.location.replace('/login');
       } else {
-        const response = await Axios.post('http://localhost:3005/usergame/get',
+        const response = await Axios.post(`${process.env.REACT_APP_BE_URL}/usergame/get`,
           { email },
           {
             headers: {
@@ -54,7 +54,7 @@ const EditPasswordPage = () => {
     event.preventDefault();
     const token = localStorage.getItem("token");
     try {
-        const response = await Axios.post("http://localhost:3005/usergame/update/password", 
+        const response = await Axios.post(`${process.env.REACT_APP_BE_URL}/usergame/update/password`, 
             {
                 id,
                 newPassword: payload.newPassword,

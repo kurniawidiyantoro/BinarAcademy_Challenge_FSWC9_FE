@@ -20,7 +20,7 @@ const ProfilePage = () => {
         window.location.replace('/login');
       } else {
         const response = await Axios.post(
-          'http://localhost:3005/usergame/get',
+          `${process.env.REACT_APP_BE_URL}/usergame/get`,
           { email },
           {
             headers: {
@@ -41,7 +41,7 @@ const ProfilePage = () => {
         // const profilePicUrl = await getProfilePicUrl(username); // Pass the response object to the function
         
         const profilePicUrl = await Axios.post(
-          'http://localhost:3005/usergame/getProfilePicUrl',
+          `${process.env.REACT_APP_BE_URL}/usergame/getProfilePicUrl`,
           { inputUsername },
           {
             headers: {

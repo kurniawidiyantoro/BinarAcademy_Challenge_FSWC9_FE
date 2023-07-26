@@ -21,7 +21,7 @@ const profileApi = () => {
         redirect: 'follow'
     };
 
-    return fetch("http://localhost:3005/usergame/get", requestOptions)
+    return fetch(`${process.env.REACT_APP_BE_URL}/usergame/get`, requestOptions)
     .then(response => response.json())
     //.then(result => console.log(result))
     .catch(error => console.log('error', error));

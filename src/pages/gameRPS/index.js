@@ -28,7 +28,7 @@ function Game() {
   const updateScores = async () => {
     setScores(scores + 1);
     const token = localStorage.getItem("token");
-    const response = await Axios.post('http://localhost:3005/usergame/update/scores',
+    const response = await Axios.post(`${process.env.REACT_APP_BE_URL}/usergame/update/scores`,
         { id, scores: scores + 1 },
         {
           headers: {
@@ -68,7 +68,7 @@ function Game() {
         console.log('Not Authorize !');
         navigate('/login'); // Ganti dengan useNavigate()
       } else {
-        const response = await Axios.post('http://localhost:3005/usergame/get',
+        const response = await Axios.post(`${process.env.REACT_APP_BE_URL}/usergame/get`,
           { email },
           {
             headers: {

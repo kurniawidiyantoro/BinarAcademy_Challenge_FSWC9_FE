@@ -16,7 +16,7 @@ const registerApi = (payload) => {
         redirect: 'follow'
     };
 
-    return fetch("http://localhost:3005/usergame/insert", requestOptions)
+    return fetch(`${process.env.REACT_APP_BE_URL}/usergame/insert`, requestOptions)
     .then(response => response)
     // .then(result => console.log(result))
     .catch(error => console.log('error', error));

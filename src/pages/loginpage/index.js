@@ -20,7 +20,7 @@ const LoginPage = () => {
   const loginApi = async (event) => {
     event.preventDefault();
     try {
-      const response = await Axios.post("http://localhost:3005/login", {
+      const response = await Axios.post(`${process.env.REACT_APP_BE_URL}/login`, {
         email: payload.email,
         password: payload.password,
       });
